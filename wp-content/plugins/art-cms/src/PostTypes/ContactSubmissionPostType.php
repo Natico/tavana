@@ -13,7 +13,7 @@ namespace ArtCms\PostTypes;
  * Registers admin-only contact submission records.
  */
 final class ContactSubmissionPostType {
-	public const KEY = 'art_contact_submission';
+	public const KEY = 'art_contact_msg';
 
 	/**
 	 * Register the post type.

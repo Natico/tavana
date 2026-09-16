@@ -6,7 +6,7 @@ Art CMS owns the content models and business rules for the Art WordPress site. I
 
 - `art_product`: showcase products, not ecommerce.
 - `art_gallery_item`: gallery content items.
-- `art_contact_submission`: admin-only stored contact submission records.
+- `art_contact_msg`: admin-only stored contact submission records.
 
 ## Registered Taxonomies
 
