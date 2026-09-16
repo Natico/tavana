@@ -20,7 +20,8 @@ wp-config.php
 # Third-party and default WordPress plugins/themes.
 /wp-content/plugins/*
 !/wp-content/plugins/art-cms/
-/wp-content/themes/
+/wp-content/themes/*
+!/wp-content/themes/art-theme/
 
 # Runtime and local tooling artifacts.
 /.repo/
