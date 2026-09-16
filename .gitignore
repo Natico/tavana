@@ -1,0 +1,30 @@
+# Local WordPress configuration.
+wp-config.php
+
+# WordPress core files.
+/index.php
+/license.txt
+/readme.html
+/wp-*.php
+/xmlrpc.php
+/wp-admin/
+/wp-includes/
+
+# WordPress-managed content.
+/wp-content/index.php
+/wp-content/uploads/
+/wp-content/upgrade/
+/wp-content/cache/
+/wp-content/debug.log
+
+# Third-party and default WordPress plugins/themes.
+/wp-content/plugins/*
+!/wp-content/plugins/art-cms/
+/wp-content/themes/
+
+# Runtime and local tooling artifacts.
+/.repo/
+/.agents/
+/.codex/
+.DS_Store
+Thumbs.db
