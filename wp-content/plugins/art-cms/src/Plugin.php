@@ -11,6 +11,7 @@ namespace ArtCms;
 
 use ArtCms\Admin\AdminColumns;
 use ArtCms\Admin\AdminMenu;
+use ArtCms\Contact\ContactSubmissionFields;
 use ArtCms\PostTypes\ContactSubmissionPostType;
 use ArtCms\PostTypes\GalleryItemPostType;
 use ArtCms\PostTypes\ProductPostType;
@@ -27,9 +28,11 @@ final class Plugin {
 	public function register_hooks(): void {
 		$admin_menu = new AdminMenu();
 		$admin_columns = new AdminColumns();
+		$contact_submission_fields = new ContactSubmissionFields();
 
 		add_action('admin_menu', array($admin_menu, 'register'));
 		$admin_columns->register_hooks();
+		$contact_submission_fields->register_hooks();
 	}
 
 	/**

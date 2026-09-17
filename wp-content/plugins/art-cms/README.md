@@ -19,6 +19,8 @@ This first version registers the core content types and taxonomies, provides a s
 
 The content post types are grouped under the `ART` admin menu for easier editorial navigation.
 
+Contact submissions include admin-only fields for name, email, phone, and message. The public contact form is still intentionally out of scope.
+
 No WordPress core files, third-party plugins, theme templates, database tables, or external PHP dependencies are modified or introduced.
 
 ## Intentionally Not Implemented Yet
