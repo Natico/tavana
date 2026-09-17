@@ -9,6 +9,7 @@ declare(strict_types=1);
 
 namespace ArtCms;
 
+use ArtCms\Admin\AdminColumns;
 use ArtCms\Admin\AdminMenu;
 use ArtCms\PostTypes\ContactSubmissionPostType;
 use ArtCms\PostTypes\GalleryItemPostType;
@@ -25,8 +26,10 @@ final class Plugin {
 	 */
 	public function register_hooks(): void {
 		$admin_menu = new AdminMenu();
+		$admin_columns = new AdminColumns();
 
 		add_action('admin_menu', array($admin_menu, 'register'));
+		$admin_columns->register_hooks();
 	}
 
 	/**
