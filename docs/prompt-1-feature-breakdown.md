@@ -167,7 +167,7 @@
 - تصمیم درباره strict یا flexible بودن `production_year`.
 - عدم افزودن ecommerce، قیمت‌گذاری، inventory یا frontend template.
 
-وضعیت: انجام نشده.
+وضعیت: انجام شده و روی branch مربوطه آماده review است.
 
 ## Feature 12: Gallery Basic Fields
 
