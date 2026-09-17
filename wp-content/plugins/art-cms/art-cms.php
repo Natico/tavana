@@ -21,11 +21,7 @@ define('ART_CMS_FILE', __FILE__);
 define('ART_CMS_PATH', plugin_dir_path(__FILE__));
 
 require_once ART_CMS_PATH . 'src/Plugin.php';
-require_once ART_CMS_PATH . 'src/Admin/AdminColumns.php';
 require_once ART_CMS_PATH . 'src/Admin/AdminMenu.php';
-require_once ART_CMS_PATH . 'src/Contact/ContactSubmissionFields.php';
-require_once ART_CMS_PATH . 'src/Gallery/GalleryItemFields.php';
-require_once ART_CMS_PATH . 'src/Product/ProductFields.php';
 require_once ART_CMS_PATH . 'src/PostTypes/ProductPostType.php';
 require_once ART_CMS_PATH . 'src/PostTypes/GalleryItemPostType.php';
 require_once ART_CMS_PATH . 'src/PostTypes/ContactSubmissionPostType.php';

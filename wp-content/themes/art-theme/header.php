@@ -23,27 +23,5 @@ declare(strict_types=1);
 </a>
 
 <header id="site-header" class="site-header">
-	<div class="site-header__inner">
-		<a class="site-brand" href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-		<?php if (is_front_page() && is_home()) : ?>
-			<h1 class="site-brand__name"><?php bloginfo('name'); ?></h1>
-		<?php else : ?>
-			<p class="site-brand__name"><?php bloginfo('name'); ?></p>
-		<?php endif; ?>
-		</a>
-
-		<?php
-		if (has_nav_menu('primary')) {
-			wp_nav_menu(
-				array(
-					'theme_location' => 'primary',
-					'container'      => 'nav',
-					'container_class' => 'site-navigation',
-					'menu_class'     => 'site-navigation__menu',
-					'depth'          => 1,
-				)
-			);
-		}
-		?>
-	</div>
+	<a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a>
 </header>
