@@ -181,6 +181,18 @@
 
 وضعیت: انجام شده و روی branch مربوطه آماده review است.
 
+## Feature 13: Product And Gallery Admin Columns
+
+هدف: نمایش مقدارهای کلیدی محصول و گالری در لیست‌های ادمین برای اسکن سریع‌تر محتوا.
+
+کارهای احتمالی:
+
+- افزودن ستون material و availability برای محصولات.
+- افزودن ستون medium و artwork_date برای آیتم‌های گالری.
+- عدم افزودن فیلد ذخیره‌سازی جدید، sorting، ordering یا frontend template.
+
+وضعیت: انجام شده و روی branch مربوطه آماده review است.
+
 ## Explicitly Deferred Items
 
 این موارد طبق prompt اولیه هنوز عمدا پیاده‌سازی نشده‌اند:

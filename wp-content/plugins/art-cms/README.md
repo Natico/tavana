@@ -25,6 +25,8 @@ Products include admin-only detail fields for subtitle, material, dimensions, pr
 
 Gallery items include admin-only detail fields for subtitle, artwork date, medium, dimensions, and credit line. Complex media relationships remain intentionally out of scope.
 
+Product and gallery list tables surface selected detail fields for faster admin scanning.
+
 No WordPress core files, third-party plugins, theme templates, database tables, or external PHP dependencies are modified or introduced.
 
 ## Intentionally Not Implemented Yet
