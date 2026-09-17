@@ -8,8 +8,10 @@
 - WordPress core و فایل‌های runtime از Git خارج شده‌اند.
 - پلاگین `art-cms` بر اساس Prompt 2 ساخته شده است.
 - در Prompt 1 نام tentative پلاگین `art-core` بود، اما در Prompt 2 تصمیم پروژه به `art-cms` تغییر کرد. از اینجا به بعد `art-cms` را پلاگین محتوایی پروژه در نظر می‌گیریم مگر اینکه تصمیم جدیدی گرفته شود.
-- هنوز theme اختصاصی `art-theme` ساخته نشده است.
-- هنوز README ریشه پروژه و فایل deployment template ساخته نشده‌اند.
+- theme اختصاصی `art-theme` ساخته شده است.
+- README ریشه پروژه و فایل deployment template امن ساخته شده‌اند.
+- منوهای محتوایی پلاگین زیر parent menu با عنوان `ART` گروه‌بندی شده‌اند.
+- همه تغییرات foundation تا این مرحله روی `main` هستند.
 
 ## Feature 1: Repository And Ignore Foundation
 
@@ -55,7 +57,7 @@
 - توضیح workflow توسعه: `main`، feature branch، commit، push، merge.
 - هشدار درباره production DB/uploads.
 
-وضعیت: آماده شروع.
+وضعیت: انجام شده و روی `main` merge شده است.
 
 ## Feature 4: Custom Theme Foundation
 
@@ -69,7 +71,7 @@
 - عدم پیاده‌سازی طراحی نهایی، صفحات کامل یا page-builder behavior.
 - اجرای PHP syntax check.
 
-وضعیت: انجام نشده.
+وضعیت: انجام شده و روی `main` merge شده است.
 
 ## Feature 5: Safe cPanel Deployment Template
 
@@ -82,7 +84,7 @@
 - مسیر production واقعی یا secret داخل آن قرار نگیرد.
 - تاکید شود deployment فقط کد اختصاصی را منتقل کند، نه DB/uploads.
 
-وضعیت: انجام نشده.
+وضعیت: انجام شده و روی `main` merge شده است.
 
 ## Feature 6: Admin Menu Organization
 
@@ -95,15 +97,77 @@
 - حفظ جدایی data model از presentation.
 - عدم افزودن role/capability logic مگر با تصمیم جداگانه.
 
+وضعیت: انجام شده و روی `main` merge شده است.
+
+## Remaining Future Features
+
+موارد زیر بخشی از foundation اولیه نبودند یا در promptها صراحتا به عنوان «فعلا پیاده نشود» آمده بودند. هرکدام باید در یک feature branch جدا بررسی و پیاده‌سازی شوند.
+
+## Feature 7: Content Admin Polish
+
+هدف: بهتر کردن تجربه مدیریت محتوا در ادمین وردپرس بدون تغییر مدل داده اصلی.
+
+کارهای احتمالی:
+
+- بازبینی labelها و menu order.
+- افزودن ستون‌های ادمین برای CPTها در صورت نیاز.
+- بهبود پیام‌ها و راهنمایی‌های admin-only.
+- حفظ scope: بدون meta field جدید، role/capability جدید یا frontend template.
+
 وضعیت: انجام نشده.
 
-## پیشنهاد فیچر بعدی
+## Feature 8: Theme Basic Layout
 
-بهترین فیچر بعدی `Project README` است، چون قبل از ساخت theme یا deployment template، باید قرارداد پروژه و workflow را در ریشه ریپو بنویسیم.
+هدف: تبدیل theme پایه `art-theme` از اسکلت خام به layout ساده و قابل استفاده.
 
-بعد از آن، مسیر منطقی این است:
+کارهای احتمالی:
 
-1. `feature/project-readme`
-2. `feature/art-theme-foundation`
-3. `feature/cpanel-deployment-template`
-4. `feature/admin-menu-organization`
+- بهبود header/footer پایه.
+- تعریف container و typography اولیه.
+- افزودن ساختار CSS ساده در محدوده theme.
+- ساخت templateهای پایه فقط در حد presentation.
+- حفظ scope: بدون page-builder behavior و بدون اتصال business logic به theme.
+
+وضعیت: انجام نشده.
+
+## Feature 9: Contact Submission Fields
+
+هدف: مشخص کردن ساختار داده‌ای contact submissionها در ادمین.
+
+کارهای احتمالی:
+
+- تصمیم‌گیری درباره fieldهای لازم.
+- افزودن meta box یا ساختار ذخیره‌سازی مناسب.
+- نمایش خوانا در admin.
+- حفظ scope: هنوز فرم frontend ساخته نشود مگر با feature جداگانه.
+
+وضعیت: انجام نشده.
+
+## Feature 10: Product And Gallery Meta Planning
+
+هدف: طراحی مرحله بعدی مدل محتوایی محصولات و گالری بدون عجله در پیاده‌سازی.
+
+کارهای احتمالی:
+
+- فهرست کردن meta fieldهای احتمالی برای product و gallery item.
+- تعیین اینکه چه چیزهایی taxonomy هستند و چه چیزهایی meta.
+- بررسی نیاز به media relationships.
+- تبدیل تصمیم‌ها به featureهای کوچک‌تر.
+
+وضعیت: انجام نشده.
+
+## Explicitly Deferred Items
+
+این موارد طبق prompt اولیه هنوز عمدا پیاده‌سازی نشده‌اند:
+
+- multilingual
+- SEO
+- template system
+- validation
+- ordering
+- duplicate handling
+- custom routing
+- writer role / custom capability logic
+- media relationships
+- contact form
+- custom frontend pages
