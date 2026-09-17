@@ -1,0 +1,13 @@
+# cPanel deployment example.
+#
+# Copy this file to `.cpanel.yml` only inside the production cPanel Git
+# repository after confirming the real account paths.
+#
+# Do not commit production-only paths, secrets, database dumps, uploads, or
+# generated backups to this repository.
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/CPANEL_USER/public_html/
+    - if [ -d wp-content/plugins/art-cms ]; then /bin/mkdir -p "${DEPLOYPATH}wp-content/plugins/art-cms"; /bin/cp -R wp-content/plugins/art-cms/. "${DEPLOYPATH}wp-content/plugins/art-cms/"; fi
+    - if [ -d wp-content/themes/art-theme ]; then /bin/mkdir -p "${DEPLOYPATH}wp-content/themes/art-theme"; /bin/cp -R wp-content/themes/art-theme/. "${DEPLOYPATH}wp-content/themes/art-theme/"; fi
