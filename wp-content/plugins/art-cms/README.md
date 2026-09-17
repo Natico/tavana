@@ -19,14 +19,6 @@ This first version registers the core content types and taxonomies, provides a s
 
 The content post types are grouped under the `ART` admin menu for easier editorial navigation.
 
-Contact submissions include admin-only fields for name, email, phone, and message. The public contact form is still intentionally out of scope.
-
-Products include admin-only detail fields for subtitle, material, dimensions, production year, and availability note. Ecommerce behavior remains intentionally out of scope.
-
-Gallery items include admin-only detail fields for subtitle, artwork date, medium, dimensions, and credit line. Complex media relationships remain intentionally out of scope.
-
-Product and gallery list tables surface selected detail fields for faster admin scanning.
-
 No WordPress core files, third-party plugins, theme templates, database tables, or external PHP dependencies are modified or introduced.
 
 ## Intentionally Not Implemented Yet
@@ -41,3 +33,5 @@ No WordPress core files, third-party plugins, theme templates, database tables, 
 - Writer role or custom capability logic.
 - Media relationships.
 - Contact form.
+- Custom meta fields.
+- Admin columns.
