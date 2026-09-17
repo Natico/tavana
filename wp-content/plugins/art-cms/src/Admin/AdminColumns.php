@@ -10,15 +10,21 @@ declare(strict_types=1);
 namespace ArtCms\Admin;
 
 use ArtCms\Contact\ContactSubmissionFields;
+use ArtCms\Gallery\GalleryItemFields;
 use ArtCms\PostTypes\ContactSubmissionPostType;
 use ArtCms\PostTypes\GalleryItemPostType;
 use ArtCms\PostTypes\ProductPostType;
+use ArtCms\Product\ProductFields;
 
 /**
  * Improves admin list tables for project content.
  */
 final class AdminColumns {
 	private const THUMBNAIL_COLUMN = 'art_thumbnail';
+	private const PRODUCT_MATERIAL_COLUMN = 'art_product_material';
+	private const PRODUCT_AVAILABILITY_COLUMN = 'art_product_availability';
+	private const GALLERY_MEDIUM_COLUMN = 'art_gallery_medium';
+	private const GALLERY_ARTWORK_DATE_COLUMN = 'art_gallery_artwork_date';
 	private const SUBMISSION_NAME_COLUMN = 'art_submission_name';
 	private const SUBMISSION_EMAIL_COLUMN = 'art_submission_email';
 	private const SUBMISSION_STATUS_COLUMN = 'art_submission_status';
@@ -27,11 +33,11 @@ final class AdminColumns {
 	 * Register column hooks.
 	 */
 	public function register_hooks(): void {
-		add_filter('manage_' . ProductPostType::KEY . '_posts_columns', array($this, 'add_thumbnail_column'));
-		add_filter('manage_' . GalleryItemPostType::KEY . '_posts_columns', array($this, 'add_thumbnail_column'));
+		add_filter('manage_' . ProductPostType::KEY . '_posts_columns', array($this, 'add_product_columns'));
+		add_filter('manage_' . GalleryItemPostType::KEY . '_posts_columns', array($this, 'add_gallery_item_columns'));
 
-		add_action('manage_' . ProductPostType::KEY . '_posts_custom_column', array($this, 'render_thumbnail_column'), 10, 2);
-		add_action('manage_' . GalleryItemPostType::KEY . '_posts_custom_column', array($this, 'render_thumbnail_column'), 10, 2);
+		add_action('manage_' . ProductPostType::KEY . '_posts_custom_column', array($this, 'render_product_column'), 10, 2);
+		add_action('manage_' . GalleryItemPostType::KEY . '_posts_custom_column', array($this, 'render_gallery_item_column'), 10, 2);
 
 		add_filter('manage_' . ContactSubmissionPostType::KEY . '_posts_columns', array($this, 'add_contact_submission_columns'));
 		add_action('manage_' . ContactSubmissionPostType::KEY . '_posts_custom_column', array($this, 'render_contact_submission_column'), 10, 2);
@@ -40,30 +46,111 @@ final class AdminColumns {
 	}
 
 	/**
-	 * Add a thumbnail column after the checkbox column.
+	 * Add product admin columns.
 	 *
 	 * @param array<string, string> $columns Existing columns.
 	 * @return array<string, string>
 	 */
-	public function add_thumbnail_column(array $columns): array {
-		return $this->insert_after_checkbox(
+	public function add_product_columns(array $columns): array {
+		$columns = $this->insert_after_checkbox(
 			$columns,
 			self::THUMBNAIL_COLUMN,
 			__('Image', 'art-cms')
 		);
+
+		$columns = $this->insert_after_column(
+			$columns,
+			self::THUMBNAIL_COLUMN,
+			self::PRODUCT_MATERIAL_COLUMN,
+			__('Material', 'art-cms')
+		);
+
+		return $this->insert_after_column(
+			$columns,
+			self::PRODUCT_MATERIAL_COLUMN,
+			self::PRODUCT_AVAILABILITY_COLUMN,
+			__('Availability', 'art-cms')
+		);
+	}
+
+	/**
+	 * Add gallery item admin columns.
+	 *
+	 * @param array<string, string> $columns Existing columns.
+	 * @return array<string, string>
+	 */
+	public function add_gallery_item_columns(array $columns): array {
+		$columns = $this->insert_after_checkbox(
+			$columns,
+			self::THUMBNAIL_COLUMN,
+			__('Image', 'art-cms')
+		);
+
+		$columns = $this->insert_after_column(
+			$columns,
+			self::THUMBNAIL_COLUMN,
+			self::GALLERY_MEDIUM_COLUMN,
+			__('Medium', 'art-cms')
+		);
+
+		return $this->insert_after_column(
+			$columns,
+			self::GALLERY_MEDIUM_COLUMN,
+			self::GALLERY_ARTWORK_DATE_COLUMN,
+			__('Artwork Date', 'art-cms')
+		);
+	}
+
+	/**
+	 * Render product columns.
+	 *
+	 * @param string $column_name Current column name.
+	 * @param int    $post_id Current post ID.
+	 */
+	public function render_product_column(string $column_name, int $post_id): void {
+		if (self::THUMBNAIL_COLUMN === $column_name) {
+			$this->render_thumbnail_column($post_id);
+			return;
+		}
+
+		if (self::PRODUCT_MATERIAL_COLUMN === $column_name) {
+			$this->render_meta_value($post_id, ProductFields::META_MATERIAL);
+			return;
+		}
+
+		if (self::PRODUCT_AVAILABILITY_COLUMN === $column_name) {
+			$this->render_meta_value($post_id, ProductFields::META_AVAILABILITY_NOTE);
+		}
+	}
+
+	/**
+	 * Render gallery item columns.
+	 *
+	 * @param string $column_name Current column name.
+	 * @param int    $post_id Current post ID.
+	 */
+	public function render_gallery_item_column(string $column_name, int $post_id): void {
+		if (self::THUMBNAIL_COLUMN === $column_name) {
+			$this->render_thumbnail_column($post_id);
+			return;
+		}
+
+		if (self::GALLERY_MEDIUM_COLUMN === $column_name) {
+			$this->render_meta_value($post_id, GalleryItemFields::META_MEDIUM);
+			return;
+		}
+
+		if (self::GALLERY_ARTWORK_DATE_COLUMN === $column_name) {
+			$this->render_meta_value($post_id, GalleryItemFields::META_ARTWORK_DATE);
+		}
 	}
 
 	/**
 	 * Render the thumbnail column.
 	 *
-	 * @param string $column_name Current column name.
-	 * @param int    $post_id Current post ID.
+	 * @param int $post_id Current post ID.
 	 */
-	public function render_thumbnail_column(string $column_name, int $post_id): void {
-		if (self::THUMBNAIL_COLUMN !== $column_name) {
-			return;
-		}
-
+	private function render_thumbnail_column(int $post_id): void {
 		if (has_post_thumbnail($post_id)) {
 			echo get_the_post_thumbnail($post_id, array(56, 56), array('class' => 'art-cms-admin-thumbnail'));
 			return;
