@@ -114,7 +114,7 @@
 - بهبود پیام‌ها و راهنمایی‌های admin-only.
 - حفظ scope: بدون meta field جدید، role/capability جدید یا frontend template.
 
-وضعیت: انجام نشده.
+وضعیت: انجام شده و روی `main` merge شده است.
 
 ## Feature 8: Theme Basic Layout
 
@@ -128,7 +128,7 @@
 - ساخت templateهای پایه فقط در حد presentation.
 - حفظ scope: بدون page-builder behavior و بدون اتصال business logic به theme.
 
-وضعیت: انجام نشده.
+وضعیت: انجام شده و روی `main` merge شده است.
 
 ## Feature 9: Contact Submission Fields
 
@@ -141,7 +141,7 @@
 - نمایش خوانا در admin.
 - حفظ scope: هنوز فرم frontend ساخته نشود مگر با feature جداگانه.
 
-وضعیت: انجام نشده.
+وضعیت: انجام شده و روی `main` merge شده است.
 
 ## Feature 10: Product And Gallery Meta Planning
 
@@ -153,6 +153,31 @@
 - تعیین اینکه چه چیزهایی taxonomy هستند و چه چیزهایی meta.
 - بررسی نیاز به media relationships.
 - تبدیل تصمیم‌ها به featureهای کوچک‌تر.
+
+وضعیت: انجام شده و روی branch مربوطه آماده review است.
+
+## Feature 11: Product Basic Fields
+
+هدف: پیاده‌سازی اولین مجموعه تاییدشده فیلدهای محصول بر اساس `docs/product-gallery-meta-planning.md`.
+
+کارهای احتمالی:
+
+- افزودن meta box محصول.
+- ذخیره امن subtitle، material، dimensions، production_year و availability_note.
+- تصمیم درباره strict یا flexible بودن `production_year`.
+- عدم افزودن ecommerce، قیمت‌گذاری، inventory یا frontend template.
+
+وضعیت: انجام نشده.
+
+## Feature 12: Gallery Basic Fields
+
+هدف: پیاده‌سازی اولین مجموعه تاییدشده فیلدهای گالری بر اساس `docs/product-gallery-meta-planning.md`.
+
+کارهای احتمالی:
+
+- افزودن meta box گالری.
+- ذخیره امن subtitle، artwork_date، medium، dimensions و credit_line.
+- عدم افزودن media relationship پیچیده، ordering یا routing.
 
 وضعیت: انجام نشده.
 
