@@ -10,29 +10,25 @@ declare(strict_types=1);
 get_header();
 ?>
 
-<main id="site-content">
+<main id="site-content" class="site-main">
+	<div class="site-main__inner">
 	<?php
 	if (have_posts()) {
 		while (have_posts()) {
 			the_post();
-			?>
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<header>
-					<h1><?php the_title(); ?></h1>
-				</header>
 
-				<div>
-					<?php the_content(); ?>
-				</div>
-			</article>
-			<?php
+			get_template_part('template-parts/content', get_post_type());
 		}
 	} else {
 		?>
-		<p><?php esc_html_e('No content found.', 'art-theme'); ?></p>
+		<section class="empty-state">
+			<h1><?php esc_html_e('No content found.', 'art-theme'); ?></h1>
+			<p><?php esc_html_e('There is no published content to display yet.', 'art-theme'); ?></p>
+		</section>
 		<?php
 	}
 	?>
+	</div>
 </main>
 
 <?php
