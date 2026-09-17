@@ -145,7 +145,7 @@ This should not be mixed into the first meta-field implementation.
    Surface selected meta values in admin list tables.
 
 4. `feature/media-relationships-planning`
-   Plan richer media relationships after real content examples are available.
+   Plan richer media relationships before implementing ordered media sets.
 
 ## Open Questions
 
