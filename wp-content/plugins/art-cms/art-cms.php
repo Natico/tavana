@@ -21,6 +21,7 @@ define('ART_CMS_FILE', __FILE__);
 define('ART_CMS_PATH', plugin_dir_path(__FILE__));
 
 require_once ART_CMS_PATH . 'src/Plugin.php';
+require_once ART_CMS_PATH . 'src/Admin/AdminMenu.php';
 require_once ART_CMS_PATH . 'src/PostTypes/ProductPostType.php';
 require_once ART_CMS_PATH . 'src/PostTypes/GalleryItemPostType.php';
 require_once ART_CMS_PATH . 'src/PostTypes/ContactSubmissionPostType.php';
@@ -49,5 +50,13 @@ add_action(
 	static function (): void {
 		$plugin = new ArtCms\Plugin();
 		$plugin->register_content_types();
+	}
+);
+
+add_action(
+	'plugins_loaded',
+	static function (): void {
+		$plugin = new ArtCms\Plugin();
+		$plugin->register_hooks();
 	}
 );

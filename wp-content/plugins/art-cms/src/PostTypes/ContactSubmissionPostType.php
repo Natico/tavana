@@ -9,6 +9,8 @@ declare(strict_types=1);
 
 namespace ArtCms\PostTypes;
 
+use ArtCms\Admin\AdminMenu;
+
 /**
  * Registers admin-only contact submission records.
  */
@@ -45,7 +47,7 @@ final class ContactSubmissionPostType {
 				'public'              => false,
 				'publicly_queryable'  => false,
 				'show_ui'             => true,
-				'show_in_menu'        => true,
+				'show_in_menu'        => AdminMenu::SLUG,
 				'show_in_rest'        => false,
 				'exclude_from_search' => true,
 				'has_archive'         => false,

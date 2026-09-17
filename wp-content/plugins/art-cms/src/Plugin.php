@@ -9,6 +9,7 @@ declare(strict_types=1);
 
 namespace ArtCms;
 
+use ArtCms\Admin\AdminMenu;
 use ArtCms\PostTypes\ContactSubmissionPostType;
 use ArtCms\PostTypes\GalleryItemPostType;
 use ArtCms\PostTypes\ProductPostType;
@@ -19,6 +20,15 @@ use ArtCms\Taxonomies\ProductCategoryTaxonomy;
  * Coordinates plugin services.
  */
 final class Plugin {
+	/**
+	 * Register WordPress hooks.
+	 */
+	public function register_hooks(): void {
+		$admin_menu = new AdminMenu();
+
+		add_action('admin_menu', array($admin_menu, 'register'));
+	}
+
 	/**
 	 * Register content-related WordPress objects.
 	 */

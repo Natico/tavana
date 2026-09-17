@@ -9,6 +9,8 @@ declare(strict_types=1);
 
 namespace ArtCms\PostTypes;
 
+use ArtCms\Admin\AdminMenu;
+
 /**
  * Registers gallery items.
  */
@@ -47,6 +49,7 @@ final class GalleryItemPostType {
 				),
 				'public'       => true,
 				'show_ui'      => true,
+				'show_in_menu' => AdminMenu::SLUG,
 				'show_in_rest' => true,
 				'has_archive'  => false,
 				'supports'     => array(

@@ -17,6 +17,8 @@ Art CMS owns the content models and business rules for the Art WordPress site. I
 
 This first version registers the core content types and taxonomies, provides a small plugin bootstrap, and flushes rewrite rules safely on activation and deactivation.
 
+The content post types are grouped under the `ART` admin menu for easier editorial navigation.
+
 No WordPress core files, third-party plugins, theme templates, database tables, or external PHP dependencies are modified or introduced.
 
 ## Intentionally Not Implemented Yet
