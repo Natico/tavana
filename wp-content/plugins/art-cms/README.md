@@ -21,6 +21,8 @@ The content post types are grouped under the `ART` admin menu for easier editori
 
 Contact submissions include admin-only fields for name, email, phone, and message. The public contact form is still intentionally out of scope.
 
+Products include admin-only detail fields for subtitle, material, dimensions, production year, and availability note. Ecommerce behavior remains intentionally out of scope.
+
 No WordPress core files, third-party plugins, theme templates, database tables, or external PHP dependencies are modified or introduced.
 
 ## Intentionally Not Implemented Yet

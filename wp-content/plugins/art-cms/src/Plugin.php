@@ -15,6 +15,7 @@ use ArtCms\Contact\ContactSubmissionFields;
 use ArtCms\PostTypes\ContactSubmissionPostType;
 use ArtCms\PostTypes\GalleryItemPostType;
 use ArtCms\PostTypes\ProductPostType;
+use ArtCms\Product\ProductFields;
 use ArtCms\Taxonomies\GalleryCategoryTaxonomy;
 use ArtCms\Taxonomies\ProductCategoryTaxonomy;
 
@@ -29,10 +30,12 @@ final class Plugin {
 		$admin_menu = new AdminMenu();
 		$admin_columns = new AdminColumns();
 		$contact_submission_fields = new ContactSubmissionFields();
+		$product_fields = new ProductFields();
 
 		add_action('admin_menu', array($admin_menu, 'register'));
 		$admin_columns->register_hooks();
 		$contact_submission_fields->register_hooks();
+		$product_fields->register_hooks();
 	}
 
 	/**
