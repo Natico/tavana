@@ -23,6 +23,8 @@ Contact submissions include admin-only fields for name, email, phone, and messag
 
 Products include admin-only detail fields for subtitle, material, dimensions, production year, and availability note. Ecommerce behavior remains intentionally out of scope.
 
+Gallery items include admin-only detail fields for subtitle, artwork date, medium, dimensions, and credit line. Complex media relationships remain intentionally out of scope.
+
 No WordPress core files, third-party plugins, theme templates, database tables, or external PHP dependencies are modified or introduced.
 
 ## Intentionally Not Implemented Yet

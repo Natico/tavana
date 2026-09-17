@@ -179,7 +179,7 @@
 - ذخیره امن subtitle، artwork_date، medium، dimensions و credit_line.
 - عدم افزودن media relationship پیچیده، ordering یا routing.
 
-وضعیت: انجام نشده.
+وضعیت: انجام شده و روی branch مربوطه آماده review است.
 
 ## Explicitly Deferred Items
 
