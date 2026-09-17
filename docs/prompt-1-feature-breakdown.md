@@ -193,6 +193,19 @@
 
 وضعیت: انجام شده و روی branch مربوطه آماده review است.
 
+## Feature 14: Media Relationships Planning
+
+هدف: طراحی مسیر آینده برای اتصال چند تصویر مرتب‌شده به محصولات و آیتم‌های گالری، بدون پیاده‌سازی UI یا ذخیره‌سازی جدید.
+
+کارهای احتمالی:
+
+- بررسی گزینه‌های ذخیره‌سازی media relationships.
+- تعیین meta keyهای پیشنهادی برای لیست attachment IDها.
+- تعریف validation rules و admin UI requirements.
+- تبدیل تصمیم‌ها به featureهای کوچک‌تر.
+
+وضعیت: انجام شده و روی branch مربوطه آماده review است.
+
 ## Explicitly Deferred Items
 
 این موارد طبق prompt اولیه هنوز عمدا پیاده‌سازی نشده‌اند:
