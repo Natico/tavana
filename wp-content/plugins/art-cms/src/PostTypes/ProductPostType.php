@@ -39,6 +39,10 @@ final class ProductPostType {
 					'all_items'             => __('All Products', 'art-cms'),
 					'archives'              => __('Product Archives', 'art-cms'),
 					'attributes'            => __('Product Attributes', 'art-cms'),
+					'featured_image'        => __('Cover / Hero Image', 'art-cms'),
+					'set_featured_image'    => __('Set cover / hero image', 'art-cms'),
+					'remove_featured_image' => __('Remove cover / hero image', 'art-cms'),
+					'use_featured_image'    => __('Use as cover / hero image', 'art-cms'),
 					'insert_into_item'      => __('Insert into product', 'art-cms'),
 					'uploaded_to_this_item' => __('Uploaded to this product', 'art-cms'),
 					'filter_items_list'     => __('Filter products list', 'art-cms'),
@@ -54,11 +58,8 @@ final class ProductPostType {
 				'has_archive'  => false,
 				'supports'     => array(
 					'title',
-					'editor',
 					'revisions',
-					'author',
 					'thumbnail',
-					'custom-fields',
 				),
 			)
 		);
