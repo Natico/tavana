@@ -19,6 +19,10 @@ This first version registers the core content types and taxonomies, provides a s
 
 The content post types are grouped under the `ART` admin menu for easier editorial navigation.
 
+Products use a classic, template-driven editing screen instead of the block editor. Product title is stored in core `post_title`, the plain-text product description is stored in core `post_content`, and optional product data fields are provided for short description, product code, and design year. Product cover / hero images use the native WordPress Featured Image field.
+
+Product Templates are developer-defined in code. The selected Product Template is stored on each Product as `_art_product_template`, and supported field states are `required`, `optional`, and `hidden`. Template visibility affects the Product admin form only; stored Product data remains independent of visibility. Frontend Product template rendering is not implemented yet.
+
 No WordPress core files, third-party plugins, theme templates, database tables, or external PHP dependencies are modified or introduced.
 
 ## Intentionally Not Implemented Yet
@@ -33,5 +37,5 @@ No WordPress core files, third-party plugins, theme templates, database tables, 
 - Writer role or custom capability logic.
 - Media relationships.
 - Contact form.
-- Custom meta fields.
+- Custom meta fields beyond the approved Product basic data fields.
 - Admin columns.
