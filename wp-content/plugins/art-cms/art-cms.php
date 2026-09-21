@@ -28,6 +28,7 @@ require_once ART_CMS_PATH . 'src/Product/ProductFields.php';
 require_once ART_CMS_PATH . 'src/PostTypes/ProductPostType.php';
 require_once ART_CMS_PATH . 'src/PostTypes/GalleryItemPostType.php';
 require_once ART_CMS_PATH . 'src/PostTypes/ContactSubmissionPostType.php';
+require_once ART_CMS_PATH . 'src/Taxonomies/ProductCategoryFields.php';
 require_once ART_CMS_PATH . 'src/Taxonomies/ProductCategoryTaxonomy.php';
 require_once ART_CMS_PATH . 'src/Taxonomies/GalleryCategoryTaxonomy.php';
 

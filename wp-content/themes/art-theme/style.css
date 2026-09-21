@@ -63,3 +63,34 @@ img {
 .product-single__terms {
 	padding-inline-start: 1.25rem;
 }
+
+.product-category {
+	width: min(100% - 2rem, 960px);
+	margin: 3rem auto;
+}
+
+.product-category__cover,
+.product-category__header,
+.product-category__section {
+	margin-block: 0 2rem;
+}
+
+.product-category__cover img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.product-category__children,
+.product-category__products {
+	display: grid;
+	gap: 1rem;
+	padding: 0;
+	list-style: none;
+}
+
+.product-category__product img {
+	display: block;
+	max-width: 240px;
+	margin-block-end: 0.5rem;
+}

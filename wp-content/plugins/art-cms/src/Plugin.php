@@ -15,6 +15,7 @@ use ArtCms\PostTypes\GalleryItemPostType;
 use ArtCms\PostTypes\ProductPostType;
 use ArtCms\Product\ProductEditor;
 use ArtCms\Product\ProductFields;
+use ArtCms\Taxonomies\ProductCategoryFields;
 use ArtCms\Template\ProductTemplateRegistry;
 use ArtCms\Taxonomies\GalleryCategoryTaxonomy;
 use ArtCms\Taxonomies\ProductCategoryTaxonomy;
@@ -31,10 +32,12 @@ final class Plugin {
 		$product_templates = new ProductTemplateRegistry();
 		$product_editor = new ProductEditor($product_templates);
 		$product_fields = new ProductFields($product_templates);
+		$product_category_fields = new ProductCategoryFields();
 
 		add_action('admin_menu', array($admin_menu, 'register'));
 		$product_editor->register_hooks();
 		$product_fields->register_hooks();
+		$product_category_fields->register_hooks();
 	}
 
 	/**
