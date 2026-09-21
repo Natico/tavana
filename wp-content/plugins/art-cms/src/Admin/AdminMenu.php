@@ -9,6 +9,9 @@ declare(strict_types=1);
 
 namespace ArtCms\Admin;
 
+use ArtCms\PostTypes\ProductPostType;
+use ArtCms\Taxonomies\ProductCategoryTaxonomy;
+
 /**
  * Registers the plugin parent admin menu.
  */
@@ -30,6 +33,14 @@ final class AdminMenu {
 		);
 
 		remove_submenu_page(self::SLUG, self::SLUG);
+
+		add_submenu_page(
+			self::SLUG,
+			__('Product Categories', 'art-cms'),
+			__('Product Categories', 'art-cms'),
+			'manage_categories',
+			'edit-tags.php?taxonomy=' . ProductCategoryTaxonomy::KEY . '&post_type=' . ProductPostType::KEY
+		);
 	}
 
 	/**

@@ -23,6 +23,8 @@ Products use a classic, template-driven editing screen instead of the block edit
 
 Product Templates are developer-defined in code. The selected Product Template is stored on each Product as `_art_product_template`, and supported field states are `required`, `optional`, and `hidden`. Template visibility affects the Product admin form only; stored Product data remains independent of visibility. Frontend Product template rendering is not implemented yet.
 
+Product Categories remain hierarchical WordPress taxonomy terms. WordPress owns their name, slug, parent, and description fields. Category cover / hero images are stored as `_art_product_category_cover_id` term meta referencing a WordPress Media Library image attachment. Product Category frontend pages are rendered by the active theme.
+
 No WordPress core files, third-party plugins, theme templates, database tables, or external PHP dependencies are modified or introduced.
 
 ## Intentionally Not Implemented Yet
