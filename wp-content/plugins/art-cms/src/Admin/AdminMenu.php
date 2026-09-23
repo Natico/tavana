@@ -9,7 +9,10 @@ declare(strict_types=1);
 
 namespace ArtCms\Admin;
 
+use ArtCms\PostTypes\ContactSubmissionPostType;
+use ArtCms\PostTypes\GalleryItemPostType;
 use ArtCms\PostTypes\ProductPostType;
+use ArtCms\Taxonomies\GalleryCategoryTaxonomy;
 use ArtCms\Taxonomies\ProductCategoryTaxonomy;
 
 /**
@@ -33,6 +36,17 @@ final class AdminMenu {
 		);
 
 		remove_submenu_page(self::SLUG, self::SLUG);
+		remove_submenu_page(self::SLUG, 'edit.php?post_type=' . ProductPostType::KEY);
+		remove_submenu_page(self::SLUG, 'edit.php?post_type=' . GalleryItemPostType::KEY);
+		remove_submenu_page(self::SLUG, 'edit.php?post_type=' . ContactSubmissionPostType::KEY);
+
+		add_submenu_page(
+			self::SLUG,
+			__('Products', 'art-cms'),
+			__('Products', 'art-cms'),
+			'edit_posts',
+			'edit.php?post_type=' . ProductPostType::KEY
+		);
 
 		add_submenu_page(
 			self::SLUG,
@@ -40,6 +54,30 @@ final class AdminMenu {
 			__('Product Categories', 'art-cms'),
 			'manage_categories',
 			'edit-tags.php?taxonomy=' . ProductCategoryTaxonomy::KEY . '&post_type=' . ProductPostType::KEY
+		);
+
+		add_submenu_page(
+			self::SLUG,
+			__('Gallery Collections', 'art-cms'),
+			__('Gallery Collections', 'art-cms'),
+			'edit_posts',
+			'edit.php?post_type=' . GalleryItemPostType::KEY
+		);
+
+		add_submenu_page(
+			self::SLUG,
+			__('Gallery Categories', 'art-cms'),
+			__('Gallery Categories', 'art-cms'),
+			'manage_categories',
+			'edit-tags.php?taxonomy=' . GalleryCategoryTaxonomy::KEY . '&post_type=' . GalleryItemPostType::KEY
+		);
+
+		add_submenu_page(
+			self::SLUG,
+			__('Contact Submissions', 'art-cms'),
+			__('Contact Submissions', 'art-cms'),
+			'edit_posts',
+			'edit.php?post_type=' . ContactSubmissionPostType::KEY
 		);
 	}
 

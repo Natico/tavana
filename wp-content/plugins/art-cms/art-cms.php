@@ -23,12 +23,18 @@ define('ART_CMS_PATH', plugin_dir_path(__FILE__));
 require_once ART_CMS_PATH . 'src/Plugin.php';
 require_once ART_CMS_PATH . 'src/Admin/AdminMenu.php';
 require_once ART_CMS_PATH . 'src/Template/ProductTemplateRegistry.php';
+require_once ART_CMS_PATH . 'src/Template/GalleryTemplateRegistry.php';
 require_once ART_CMS_PATH . 'src/Product/ProductEditor.php';
 require_once ART_CMS_PATH . 'src/Product/ProductFields.php';
+require_once ART_CMS_PATH . 'src/Gallery/GalleryEditor.php';
+require_once ART_CMS_PATH . 'src/Gallery/GalleryMedia.php';
+require_once ART_CMS_PATH . 'src/Gallery/GalleryMediaEditor.php';
+require_once ART_CMS_PATH . 'src/Gallery/GalleryRelationships.php';
 require_once ART_CMS_PATH . 'src/PostTypes/ProductPostType.php';
 require_once ART_CMS_PATH . 'src/PostTypes/GalleryItemPostType.php';
 require_once ART_CMS_PATH . 'src/PostTypes/ContactSubmissionPostType.php';
 require_once ART_CMS_PATH . 'src/Taxonomies/ProductCategoryFields.php';
+require_once ART_CMS_PATH . 'src/Taxonomies/GalleryCategoryFields.php';
 require_once ART_CMS_PATH . 'src/Taxonomies/ProductCategoryTaxonomy.php';
 require_once ART_CMS_PATH . 'src/Taxonomies/GalleryCategoryTaxonomy.php';
 

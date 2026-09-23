@@ -5,7 +5,7 @@ Art CMS owns the content models and business rules for the Art WordPress site. I
 ## Registered Custom Post Types
 
 - `art_product`: showcase products, not ecommerce.
-- `art_gallery_item`: gallery content items.
+- `art_gallery_item`: gallery collections.
 - `art_contact_msg`: admin-only stored contact submission records.
 
 ## Registered Taxonomies
@@ -24,6 +24,10 @@ Products use a classic, template-driven editing screen instead of the block edit
 Product Templates are developer-defined in code. The selected Product Template is stored on each Product as `_art_product_template`, and supported field states are `required`, `optional`, and `hidden`. Template visibility affects the Product admin form only; stored Product data remains independent of visibility. Frontend Product template rendering is not implemented yet.
 
 Product Categories remain hierarchical WordPress taxonomy terms. WordPress owns their name, slug, parent, and description fields. Category cover / hero images are stored as `_art_product_category_cover_id` term meta referencing a WordPress Media Library image attachment. Product Category frontend pages are rendered by the active theme.
+
+Gallery Collections use WordPress core post data for title, description, and status. Gallery Categories remain native taxonomy relationships. The selected Gallery Template is stored as `_art_gallery_template`, ordered Gallery Media Items use the `_art_gallery_media_items` data contract, and Gallery Cover references one Image Media Item stable ID using `_art_gallery_cover_media_item_id`. The Gallery Media Manager supports images, uploaded videos, external video URLs, local item metadata, drag-and-drop ordering, and cover selection from image items only. Gallery Collections can reference multiple Products through Gallery-owned `_art_gallery_related_products` data. Related Products are currently admin/data only; Gallery frontend rendering is not implemented yet.
+
+Gallery Categories remain hierarchical WordPress taxonomy terms. WordPress owns their name, slug, parent, and description fields. Gallery Category cover / hero images are stored as `_art_gallery_category_cover_id` term meta referencing a reusable WordPress Media Library image attachment. Gallery Category frontend rendering is not implemented yet.
 
 No WordPress core files, third-party plugins, theme templates, database tables, or external PHP dependencies are modified or introduced.
 
