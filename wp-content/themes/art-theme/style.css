@@ -94,3 +94,89 @@ img {
 	max-width: 240px;
 	margin-block-end: 0.5rem;
 }
+
+.gallery-single {
+	width: min(100% - 2rem, 960px);
+	margin: 3rem auto;
+}
+
+.gallery-single__header,
+.gallery-single__section,
+.gallery-single__cover {
+	margin-block: 0 2rem;
+}
+
+.gallery-single__title {
+	margin-block: 0 0.75rem;
+}
+
+.gallery-single__cover img,
+.gallery-single__media-item img,
+.gallery-single__media-item video {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.gallery-single__media-list {
+	display: grid;
+	gap: 1.5rem;
+}
+
+.gallery-single__media-item {
+	margin: 0;
+}
+
+.gallery-single__media-meta {
+	margin-block-start: 0.5rem;
+}
+
+.gallery-single__media-meta p {
+	margin-block: 0.25rem 0;
+}
+
+.gallery-single__terms,
+.gallery-single__related-products {
+	padding-inline-start: 1.25rem;
+}
+
+.gallery-category {
+	width: min(100% - 2rem, 960px);
+	margin: 3rem auto;
+}
+
+.gallery-category__cover,
+.gallery-category__header,
+.gallery-category__section {
+	margin-block: 0 2rem;
+}
+
+.gallery-category__cover img,
+.gallery-category__child img,
+.gallery-category__collection img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.gallery-category__children,
+.gallery-category__collections {
+	display: grid;
+	gap: 1rem;
+	padding: 0;
+	list-style: none;
+}
+
+.gallery-category__child,
+.gallery-category__collection {
+	margin: 0;
+}
+
+.gallery-category__child h3,
+.gallery-category__collection h3 {
+	margin-block: 0.5rem 0;
+}
+
+.gallery-category__child-description {
+	margin-block-start: 0.5rem;
+}

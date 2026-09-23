@@ -1,0 +1,118 @@
+.art-gallery-media-manager__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-block-end: 12px;
+}
+
+.art-gallery-media-manager__empty {
+	padding: 16px;
+	border: 1px dashed #c3c4c7;
+	background: #f6f7f7;
+	color: #646970;
+}
+
+.art-gallery-media-manager__items {
+	margin-block-start: 12px;
+}
+
+.art-gallery-media-item {
+	border: 1px solid #c3c4c7;
+	background: #fff;
+	margin-block-end: 12px;
+}
+
+.art-gallery-media-item__bar {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 10px 12px;
+	border-block-end: 1px solid #dcdcde;
+	background: #f6f7f7;
+	cursor: move;
+}
+
+.art-gallery-media-item__drag-indicator {
+	color: #646970;
+	font-weight: 700;
+	letter-spacing: 1px;
+}
+
+.art-gallery-media-item__heading {
+	min-width: 0;
+	overflow-wrap: anywhere;
+}
+
+.art-gallery-media-item__attachment {
+	color: #646970;
+}
+
+.art-gallery-media-item__actions {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	margin-inline-start: auto;
+}
+
+.art-gallery-media-item__actions button {
+	cursor: pointer;
+}
+
+.art-gallery-media-item__actions button:disabled {
+	cursor: default;
+	opacity: 0.45;
+}
+
+.art-gallery-media-item--placeholder {
+	border: 1px dashed #2271b1;
+	background: #f0f6fc;
+}
+
+.art-gallery-media-item__body {
+	display: grid;
+	grid-template-columns: 150px minmax(0, 1fr);
+	gap: 16px;
+	padding: 12px;
+}
+
+.art-gallery-media-item__preview {
+	min-height: 80px;
+	color: #646970;
+}
+
+.art-gallery-media-item__thumb {
+	display: block;
+	max-width: 150px;
+	height: auto;
+}
+
+.art-gallery-media-item__file {
+	padding: 12px;
+	border: 1px solid #dcdcde;
+	background: #f6f7f7;
+	word-break: break-word;
+}
+
+.art-gallery-media-item__fields {
+	display: grid;
+	gap: 10px;
+}
+
+.art-gallery-media-item__field span {
+	display: block;
+	margin-block-end: 4px;
+	font-weight: 600;
+}
+
+.art-gallery-media-item__cover {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	font-weight: 600;
+}
+
+@media (max-width: 782px) {
+	.art-gallery-media-item__body {
+		grid-template-columns: 1fr;
+	}
+}
