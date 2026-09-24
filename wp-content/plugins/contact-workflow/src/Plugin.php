@@ -14,6 +14,8 @@ use ContactWorkflow\Admin\DepartmentDeletionGuard;
 use ContactWorkflow\Admin\DepartmentFields;
 use ContactWorkflow\Admin\SubmissionAdmin;
 use ContactWorkflow\Data\SubmissionFields;
+use ContactWorkflow\Frontend\FormHandler;
+use ContactWorkflow\Frontend\FormShortcode;
 use ContactWorkflow\PostTypes\DepartmentPostType;
 use ContactWorkflow\PostTypes\SubmissionPostType;
 
@@ -31,6 +33,8 @@ final class Plugin {
 		$submission_admin = new SubmissionAdmin();
 		$department_fields = new DepartmentFields();
 		$department_deletion_guard = new DepartmentDeletionGuard();
+		$form_handler = new FormHandler();
+		$form_shortcode = new FormShortcode($form_handler);
 
 		$capabilities->register_hooks();
 		add_action('admin_menu', array($admin_menu, 'register'));
@@ -38,6 +42,8 @@ final class Plugin {
 		$submission_admin->register_hooks();
 		$department_fields->register_hooks();
 		$department_deletion_guard->register_hooks();
+		$form_handler->register_hooks();
+		$form_shortcode->register_hooks();
 	}
 
 	/**

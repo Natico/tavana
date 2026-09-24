@@ -27,6 +27,8 @@ require_once CONTACT_WORKFLOW_PATH . 'src/Admin/SubmissionAdmin.php';
 require_once CONTACT_WORKFLOW_PATH . 'src/Admin/DepartmentFields.php';
 require_once CONTACT_WORKFLOW_PATH . 'src/Admin/DepartmentDeletionGuard.php';
 require_once CONTACT_WORKFLOW_PATH . 'src/Data/SubmissionFields.php';
+require_once CONTACT_WORKFLOW_PATH . 'src/Frontend/FormHandler.php';
+require_once CONTACT_WORKFLOW_PATH . 'src/Frontend/FormShortcode.php';
 require_once CONTACT_WORKFLOW_PATH . 'src/PostTypes/SubmissionPostType.php';
 require_once CONTACT_WORKFLOW_PATH . 'src/PostTypes/DepartmentPostType.php';
 
