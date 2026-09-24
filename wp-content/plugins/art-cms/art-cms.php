@@ -32,7 +32,6 @@ require_once ART_CMS_PATH . 'src/Gallery/GalleryMediaEditor.php';
 require_once ART_CMS_PATH . 'src/Gallery/GalleryRelationships.php';
 require_once ART_CMS_PATH . 'src/PostTypes/ProductPostType.php';
 require_once ART_CMS_PATH . 'src/PostTypes/GalleryItemPostType.php';
-require_once ART_CMS_PATH . 'src/PostTypes/ContactSubmissionPostType.php';
 require_once ART_CMS_PATH . 'src/Taxonomies/ProductCategoryFields.php';
 require_once ART_CMS_PATH . 'src/Taxonomies/GalleryCategoryFields.php';
 require_once ART_CMS_PATH . 'src/Taxonomies/ProductCategoryTaxonomy.php';

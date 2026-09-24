@@ -14,7 +14,6 @@ use ArtCms\Gallery\GalleryEditor;
 use ArtCms\Gallery\GalleryMedia;
 use ArtCms\Gallery\GalleryMediaEditor;
 use ArtCms\Gallery\GalleryRelationships;
-use ArtCms\PostTypes\ContactSubmissionPostType;
 use ArtCms\PostTypes\GalleryItemPostType;
 use ArtCms\PostTypes\ProductPostType;
 use ArtCms\Product\ProductEditor;
@@ -64,7 +63,6 @@ final class Plugin {
 		$post_types = array(
 			new ProductPostType(),
 			new GalleryItemPostType(),
-			new ContactSubmissionPostType(),
 		);
 
 		foreach ($post_types as $post_type) {
