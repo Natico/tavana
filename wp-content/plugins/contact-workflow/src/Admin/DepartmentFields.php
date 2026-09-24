@@ -154,7 +154,7 @@ final class DepartmentFields {
 			$this->email_error = $email_result['error'];
 		}
 
-		$active = isset($_POST[self::FIELD_ACTIVE]) && '1' === (string) wp_unslash($_POST[self::FIELD_ACTIVE]);
+		$active = isset($_POST[self::FIELD_ACTIVE]) && '1' === (string) wp_unslash($_POST[self::FIELD_ACTIVE]) ? '1' : '0';
 		update_post_meta($post_id, self::META_ACTIVE, $active);
 
 		$order = isset($_POST[self::FIELD_ORDER]) && is_scalar($_POST[self::FIELD_ORDER])
@@ -234,8 +234,8 @@ final class DepartmentFields {
 	 *
 	 * @param mixed $value Raw value.
 	 */
-	public function sanitize_active($value): bool {
-		return filter_var($value, FILTER_VALIDATE_BOOLEAN);
+	public function sanitize_active($value): string {
+		return filter_var($value, FILTER_VALIDATE_BOOLEAN) ? '1' : '0';
 	}
 
 	/**
@@ -322,7 +322,7 @@ final class DepartmentFields {
 	private function is_active(int $post_id): bool {
 		$value = get_post_meta($post_id, self::META_ACTIVE, true);
 
-		return '' === $value ? true : $this->sanitize_active($value);
+		return '' === $value ? true : '1' === $this->sanitize_active($value);
 	}
 
 	/**

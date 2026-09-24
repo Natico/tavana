@@ -46,6 +46,21 @@ Contact Workflow is a standalone WordPress plugin for admin-managed contact subm
 
 Administrators receive these capabilities safely on activation and during admin initialization for already-active plugin updates. The plugin does not create a Writer role and does not modify non-Administrator roles.
 
+
+## Public Form Shortcode
+
+Use this shortcode to render the public Contact Workflow form:
+
+```text
+[contact_workflow_form]
+```
+
+The form includes Name, Email, optional Phone, Department, Subject, Message, and a submit button. Departments are loaded from active `cw_department` posts and ordered by `_cw_department_order`, then title. Recipient email configuration is never exposed in the frontend HTML.
+
+Successful submissions are stored as `cw_submission` records using the existing `_cw_*` submission meta fields. Contact Status is always created as `new`.
+
+Validation failures render in the same request with safe previously entered values. Successful submissions use POST/Redirect/GET so refreshing the page does not duplicate the submission.
+
 ## Admin Navigation
 
 Contact
@@ -58,7 +73,6 @@ Deactivation does not delete submissions, departments, meta, or user data. No un
 
 ## Not Implemented Yet
 
-- Frontend contact form.
 - Email delivery or routing execution.
 - SMTP/provider integrations.
 - CAPTCHA or anti-spam.
