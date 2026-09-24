@@ -9,7 +9,6 @@ declare(strict_types=1);
 
 namespace ArtCms\Admin;
 
-use ArtCms\PostTypes\ContactSubmissionPostType;
 use ArtCms\PostTypes\GalleryItemPostType;
 use ArtCms\PostTypes\ProductPostType;
 use ArtCms\Taxonomies\GalleryCategoryTaxonomy;
@@ -38,7 +37,6 @@ final class AdminMenu {
 		remove_submenu_page(self::SLUG, self::SLUG);
 		remove_submenu_page(self::SLUG, 'edit.php?post_type=' . ProductPostType::KEY);
 		remove_submenu_page(self::SLUG, 'edit.php?post_type=' . GalleryItemPostType::KEY);
-		remove_submenu_page(self::SLUG, 'edit.php?post_type=' . ContactSubmissionPostType::KEY);
 
 		add_submenu_page(
 			self::SLUG,
@@ -70,14 +68,6 @@ final class AdminMenu {
 			__('Gallery Categories', 'art-cms'),
 			'manage_categories',
 			'edit-tags.php?taxonomy=' . GalleryCategoryTaxonomy::KEY . '&post_type=' . GalleryItemPostType::KEY
-		);
-
-		add_submenu_page(
-			self::SLUG,
-			__('Contact Submissions', 'art-cms'),
-			__('Contact Submissions', 'art-cms'),
-			'edit_posts',
-			'edit.php?post_type=' . ContactSubmissionPostType::KEY
 		);
 	}
 

@@ -6,7 +6,6 @@ Art CMS owns the content models and business rules for the Art WordPress site. I
 
 - `art_product`: showcase products, not ecommerce.
 - `art_gallery_item`: gallery collections.
-- `art_contact_msg`: admin-only stored contact submission records.
 
 ## Registered Taxonomies
 
@@ -17,7 +16,7 @@ Art CMS owns the content models and business rules for the Art WordPress site. I
 
 This first version registers the core content types and taxonomies, provides a small plugin bootstrap, and flushes rewrite rules safely on activation and deactivation.
 
-The content post types are grouped under the `ART` admin menu for easier editorial navigation.
+The content post types are grouped under the `ART` admin menu for easier editorial navigation. Contact management is owned by the standalone Contact Workflow plugin.
 
 Products use a classic, template-driven editing screen instead of the block editor. Product title is stored in core `post_title`, the plain-text product description is stored in core `post_content`, and optional product data fields are provided for short description, product code, and design year. Product cover / hero images use the native WordPress Featured Image field.
 
@@ -40,8 +39,8 @@ No WordPress core files, third-party plugins, theme templates, database tables, 
 - Ordering features.
 - Duplicate handling.
 - Custom routing or rewrite hierarchy.
-- Writer role or custom capability logic.
+- Writer role creation or CMS-wide role management.
 - Media relationships.
-- Contact form.
-- Custom meta fields beyond the approved Product basic data fields.
+- Contact management; use the standalone Contact Workflow plugin.
+- Custom meta fields beyond the approved Product and Gallery data fields.
 - Admin columns.
