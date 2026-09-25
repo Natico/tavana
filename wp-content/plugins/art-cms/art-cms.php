@@ -24,6 +24,7 @@ require_once ART_CMS_PATH . 'src/Plugin.php';
 require_once ART_CMS_PATH . 'src/Admin/AdminMenu.php';
 require_once ART_CMS_PATH . 'src/Template/ProductTemplateRegistry.php';
 require_once ART_CMS_PATH . 'src/Template/GalleryTemplateRegistry.php';
+require_once ART_CMS_PATH . 'src/Integrations/PolylangIntegration.php';
 require_once ART_CMS_PATH . 'src/Product/ProductEditor.php';
 require_once ART_CMS_PATH . 'src/Product/ProductFields.php';
 require_once ART_CMS_PATH . 'src/Product/ProductHomepageFields.php';
