@@ -14,6 +14,7 @@ use ArtCms\Gallery\GalleryEditor;
 use ArtCms\Gallery\GalleryMedia;
 use ArtCms\Gallery\GalleryMediaEditor;
 use ArtCms\Gallery\GalleryRelationships;
+use ArtCms\Integrations\PolylangIntegration;
 use ArtCms\PostTypes\GalleryItemPostType;
 use ArtCms\PostTypes\ProductPostType;
 use ArtCms\Product\ProductEditor;
@@ -46,6 +47,7 @@ final class Plugin {
 		$gallery_media = new GalleryMedia();
 		$gallery_media_editor = new GalleryMediaEditor($gallery_media);
 		$gallery_relationships = new GalleryRelationships();
+		$polylang_integration = new PolylangIntegration();
 
 		add_action('admin_menu', array($admin_menu, 'register'));
 		$product_editor->register_hooks();
@@ -57,6 +59,7 @@ final class Plugin {
 		$gallery_media->register_hooks();
 		$gallery_media_editor->register_hooks();
 		$gallery_relationships->register_hooks();
+		$polylang_integration->register_hooks();
 	}
 
 	/**
