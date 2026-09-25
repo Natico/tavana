@@ -26,6 +26,7 @@ require_once ART_CMS_PATH . 'src/Template/ProductTemplateRegistry.php';
 require_once ART_CMS_PATH . 'src/Template/GalleryTemplateRegistry.php';
 require_once ART_CMS_PATH . 'src/Product/ProductEditor.php';
 require_once ART_CMS_PATH . 'src/Product/ProductFields.php';
+require_once ART_CMS_PATH . 'src/Product/ProductHomepageFields.php';
 require_once ART_CMS_PATH . 'src/Gallery/GalleryEditor.php';
 require_once ART_CMS_PATH . 'src/Gallery/GalleryMedia.php';
 require_once ART_CMS_PATH . 'src/Gallery/GalleryMediaEditor.php';

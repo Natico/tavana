@@ -31,3 +31,21 @@ add_action(
 		);
 	}
 );
+
+
+/**
+ * Resolve a temporary navigation URL by page slug.
+ *
+ * @param string $page_path Page path.
+ */
+function art_theme_get_temporary_nav_url(string $page_path): string {
+	$page = get_page_by_path($page_path);
+
+	if (! $page instanceof WP_Post || 'publish' !== $page->post_status) {
+		return '';
+	}
+
+	$permalink = get_permalink($page);
+
+	return is_string($permalink) ? $permalink : '';
+}
