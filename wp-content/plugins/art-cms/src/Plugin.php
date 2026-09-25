@@ -18,6 +18,7 @@ use ArtCms\PostTypes\GalleryItemPostType;
 use ArtCms\PostTypes\ProductPostType;
 use ArtCms\Product\ProductEditor;
 use ArtCms\Product\ProductFields;
+use ArtCms\Product\ProductHomepageFields;
 use ArtCms\Taxonomies\GalleryCategoryFields;
 use ArtCms\Taxonomies\ProductCategoryFields;
 use ArtCms\Template\GalleryTemplateRegistry;
@@ -37,6 +38,7 @@ final class Plugin {
 		$product_templates = new ProductTemplateRegistry();
 		$product_editor = new ProductEditor($product_templates);
 		$product_fields = new ProductFields($product_templates);
+		$product_homepage_fields = new ProductHomepageFields();
 		$product_category_fields = new ProductCategoryFields();
 		$gallery_category_fields = new GalleryCategoryFields();
 		$gallery_templates = new GalleryTemplateRegistry();
@@ -48,6 +50,7 @@ final class Plugin {
 		add_action('admin_menu', array($admin_menu, 'register'));
 		$product_editor->register_hooks();
 		$product_fields->register_hooks();
+		$product_homepage_fields->register_hooks();
 		$product_category_fields->register_hooks();
 		$gallery_category_fields->register_hooks();
 		$gallery_editor->register_hooks();
