@@ -22,6 +22,7 @@ wp-config.php
 !/wp-content/plugins/art-cms/
 !/wp-content/plugins/contact-workflow/
 !/wp-content/plugins/site-mode/
+!/wp-content/plugins/welcome-screen/
 /wp-content/themes/*
 !/wp-content/themes/art-theme/
 

@@ -15,6 +15,7 @@ defined('ABSPATH') || exit;
 	<meta name="robots" content="noindex, nofollow">
 	<title><?php echo esc_html($document_title); ?></title>
 	<link rel="stylesheet" href="<?php echo esc_url($stylesheet_url); ?>">
+	<?php do_action('site_mode_standalone_head'); ?>
 </head>
 <body class="site-mode-coming-soon <?php echo $is_rtl ? 'site-mode-coming-soon--rtl' : 'site-mode-coming-soon--ltr'; ?>">
 	<main class="site-mode-coming-soon__page">
@@ -24,5 +25,6 @@ defined('ABSPATH') || exit;
 			</div>
 		</article>
 	</main>
+	<?php do_action('site_mode_standalone_footer'); ?>
 </body>
 </html>
