@@ -3,12 +3,21 @@
 	inset: 0;
 	z-index: 2147483000;
 	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: clamp(24px, 6vw, 72px);
+	align-items: stretch;
+	justify-content: stretch;
+	box-sizing: border-box;
+	width: 100%;
+	height: 100vh;
+	height: 100dvh;
+	padding: 0;
 	background: #0f0f0f;
 	color: #ffffff;
-	overflow: auto;
+	overflow: hidden;
+}
+
+.welcome-screen,
+.welcome-screen * {
+	box-sizing: border-box;
 }
 
 .welcome-screen[hidden] {
@@ -20,16 +29,22 @@
 }
 
 .welcome-screen__panel {
-	width: min(100%, 960px);
-	min-height: min(720px, calc(100vh - 48px));
+	position: relative;
+	width: 100%;
+	height: 100%;
+	min-height: 0;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	gap: 32px;
+	justify-content: flex-start;
+	gap: 0;
 }
 
 .welcome-screen__content {
-	max-width: 100%;
+	width: 100%;
+	max-width: none;
+	min-height: 0;
+	flex: 1 1 auto;
+	display: flex;
 }
 
 .welcome-screen__content > *:first-child {
@@ -41,7 +56,10 @@
 }
 
 .welcome-screen__enter {
-	align-self: center;
+	position: absolute;
+	left: 50%;
+	bottom: clamp(16px, 3vh, 34px);
+	transform: translateX(-50%);
 	min-height: 44px;
 	padding: 12px 22px;
 	border: 1px solid currentColor;
@@ -59,14 +77,8 @@
 	color: #0f0f0f;
 }
 
-
 @media (max-width: 640px) {
-	.welcome-screen {
-		padding: 20px;
-	}
-
-	.welcome-screen__panel {
-		min-height: calc(100vh - 40px);
-		gap: 24px;
+	.welcome-screen__enter {
+		bottom: 16px;
 	}
 }
