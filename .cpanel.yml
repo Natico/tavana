@@ -1,13 +1,9 @@
 ---
 deployment:
   tasks:
-    - /bin/mkdir -p /home/fftlhqzd/public_html/wp-content/plugins/art-cms
-    - /bin/cp -a wp-content/plugins/art-cms/. /home/fftlhqzd/public_html/wp-content/plugins/art-cms/
-    - /bin/mkdir -p /home/fftlhqzd/public_html/wp-content/plugins/contact-workflow
-    - /bin/cp -a wp-content/plugins/contact-workflow/. /home/fftlhqzd/public_html/wp-content/plugins/contact-workflow/
-    - /bin/mkdir -p /home/fftlhqzd/public_html/wp-content/plugins/site-mode
-    - /bin/cp -a wp-content/plugins/site-mode/. /home/fftlhqzd/public_html/wp-content/plugins/site-mode/
-    - /bin/mkdir -p /home/fftlhqzd/public_html/wp-content/plugins/welcome-screen
-    - /bin/cp -a wp-content/plugins/welcome-screen/. /home/fftlhqzd/public_html/wp-content/plugins/welcome-screen/
-    - /bin/mkdir -p /home/fftlhqzd/public_html/wp-content/themes/art-theme
-    - /bin/cp -a wp-content/themes/art-theme/. /home/fftlhqzd/public_html/wp-content/themes/art-theme/
+    - export DEPLOYPATH=/home/fftlhqzd/public_html/
+    - /bin/cp -R wp-content/plugins/art-cms ../../public_html/wp-content/plugins/
+    - /bin/cp -R wp-content/plugins/contact-workflow ../../public_html/wp-content/plugins/
+    - /bin/cp -R wp-content/plugins/site-mode ../../public_html/wp-content/plugins/
+    - /bin/cp -R wp-content/plugins/welcome-screen ../../public_html/wp-content/plugins/
+    - /bin/cp -R wp-content/themes/art-theme ../../public_html/wp-content/themes/
