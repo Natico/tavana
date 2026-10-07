@@ -19,6 +19,18 @@
 		}
 	}
 
+	function clearSeen(storage, key) {
+		if (!storage) {
+			return;
+		}
+
+		try {
+			storage.removeItem(key);
+		} catch (error) {
+			return;
+		}
+	}
+
 	function hasSeen(storage, key) {
 		if (!storage) {
 			return false;
@@ -43,9 +55,13 @@
 		var storageKey = overlay.getAttribute('data-welcome-screen-storage-key') || 'welcomeScreen';
 		var storage = getStorage(frequency);
 
-		if (hasSeen(storage, storageKey)) {
-			overlay.remove();
-			return;
+		function show() {
+			overlay.hidden = false;
+			document.body.classList.add('welcome-screen--open');
+
+			if (button) {
+				button.focus({ preventScroll: true });
+			}
 		}
 
 		function dismiss() {
@@ -54,12 +70,17 @@
 			document.body.classList.remove('welcome-screen--open');
 		}
 
-		overlay.hidden = false;
-		document.body.classList.add('welcome-screen--open');
+		function reopen() {
+			clearSeen(storage, storageKey);
+			show();
+		}
+
+		if (!hasSeen(storage, storageKey)) {
+			show();
+		}
 
 		if (button) {
 			button.addEventListener('click', dismiss);
-			button.focus({ preventScroll: true });
 		}
 
 		document.addEventListener('keydown', function (event) {
@@ -67,6 +88,8 @@
 				dismiss();
 			}
 		});
+
+		document.addEventListener('welcome-screen:open', reopen);
 	}
 
 	if (document.readyState === 'loading') {

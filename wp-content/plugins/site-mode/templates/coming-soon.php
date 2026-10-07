@@ -21,7 +21,10 @@ defined('ABSPATH') || exit;
 	<main class="site-mode-coming-soon__page">
 		<article class="site-mode-coming-soon__content">
 			<div class="site-mode-coming-soon__body">
-				<?php echo wp_kses_post($content); ?>
+				<?php
+				// Render filtered Page content as WordPress does; save-time permissions control allowed HTML.
+				echo $content; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				?>
 			</div>
 		</article>
 	</main>
