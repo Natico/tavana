@@ -8,6 +8,14 @@ Requires PHP: 8.3
 Text Domain: art-theme
 */
 
+@font-face {
+	font-family: 'Titling Gothic Skyline';
+	src: url("assets/fonts/titling.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -198,6 +206,14 @@ img {
     text-decoration: none;
 }
 
+.site-header__tools {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+    justify-content: flex-end;
+}
+
 .site-navigation__list {
     display: flex;
     flex-wrap: wrap;
@@ -224,6 +240,35 @@ img {
 
 .site-navigation__link--disabled {
     opacity: 0.45;
+}
+
+.language-switcher__list {
+    display: flex;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.language-switcher__link {
+    color: #32302c;
+    display: inline-block;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    padding: 0.25rem 0;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.language-switcher__link:hover,
+.language-switcher__link:focus {
+    text-decoration: underline;
+}
+
+.language-switcher__link--current {
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
 }
 
 .home-sketch {

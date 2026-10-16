@@ -1,3 +1,11 @@
+@font-face {
+	font-family: 'Titling Gothic Skyline';
+	src: url("../../../themes/art-theme/assets/fonts/titling.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
 html {
 	box-sizing: border-box;
 }

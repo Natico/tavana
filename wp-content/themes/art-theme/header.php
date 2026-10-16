@@ -23,13 +23,13 @@ declare(strict_types=1);
 </a>
 
 <header id="site-header" class="site-header">
-	<a class="site-header__brand" href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a>
+	<a class="site-header__brand" href="<?php echo esc_url(art_theme_get_home_url()); ?>" rel="home"><?php bloginfo('name'); ?></a>
 
 	<?php
 	$nav_items = array(
 		array(
 			'label' => __('Home', 'art-theme'),
-			'url'   => home_url('/'),
+			'url'   => art_theme_get_home_url(),
 		),
 		array(
 			'label' => __('Products', 'art-theme'),
@@ -48,18 +48,39 @@ declare(strict_types=1);
 			'url'   => art_theme_get_temporary_nav_url('contact'),
 		),
 	);
+	$language_items = art_theme_get_language_switcher_items();
 	?>
-	<nav class="site-navigation" aria-label="<?php echo esc_attr__('Primary navigation', 'art-theme'); ?>">
-		<ul class="site-navigation__list">
-			<?php foreach ($nav_items as $nav_item) : ?>
-				<li class="site-navigation__item">
-					<?php if (is_string($nav_item['url']) && '' !== $nav_item['url']) : ?>
-						<a class="site-navigation__link" href="<?php echo esc_url($nav_item['url']); ?>"><?php echo esc_html($nav_item['label']); ?></a>
-					<?php else : ?>
-						<span class="site-navigation__link site-navigation__link--disabled" aria-disabled="true"><?php echo esc_html($nav_item['label']); ?></span>
-					<?php endif; ?>
-				</li>
-			<?php endforeach; ?>
-		</ul>
-	</nav>
+	<div class="site-header__tools">
+		<nav class="site-navigation" aria-label="<?php echo esc_attr__('Primary navigation', 'art-theme'); ?>">
+			<ul class="site-navigation__list">
+				<?php foreach ($nav_items as $nav_item) : ?>
+					<li class="site-navigation__item">
+						<?php if (is_string($nav_item['url']) && '' !== $nav_item['url']) : ?>
+							<a class="site-navigation__link" href="<?php echo esc_url($nav_item['url']); ?>"><?php echo esc_html($nav_item['label']); ?></a>
+						<?php else : ?>
+							<span class="site-navigation__link site-navigation__link--disabled" aria-disabled="true"><?php echo esc_html($nav_item['label']); ?></span>
+						<?php endif; ?>
+					</li>
+				<?php endforeach; ?>
+			</ul>
+		</nav>
+
+		<?php if (! empty($language_items)) : ?>
+			<nav class="language-switcher" aria-label="<?php echo esc_attr__('Language switcher', 'art-theme'); ?>">
+				<ul class="language-switcher__list">
+					<?php foreach ($language_items as $language_item) : ?>
+						<li class="language-switcher__item">
+							<a
+								class="language-switcher__link<?php echo $language_item['current'] ? ' language-switcher__link--current' : ''; ?>"
+								href="<?php echo esc_url($language_item['url']); ?>"
+								<?php echo $language_item['current'] ? 'aria-current="true"' : ''; ?>
+							>
+								<?php echo esc_html(strtoupper($language_item['slug'])); ?>
+							</a>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+			</nav>
+		<?php endif; ?>
+	</div>
 </header>
