@@ -104,6 +104,9 @@ final class Overlay {
 
 		$content = apply_filters('the_content', $context['post']->post_content);
 		$content = is_string($content) ? $content : '';
+		$allowed_html = wp_kses_allowed_html('post');
+		// Keep page-authored responsive CSS while retaining the existing script filtering.
+		$allowed_html['style'] = array('data-wp-block-html' => true, 'type' => true);
 		$direction = is_rtl() ? 'rtl' : 'ltr';
 		$direction_class = 'rtl' === $direction ? 'is-rtl' : 'is-ltr';
 		?>
@@ -120,7 +123,7 @@ final class Overlay {
 		>
 			<div class="welcome-screen__panel">
 				<div class="welcome-screen__content">
-					<?php echo wp_kses_post($content); ?>
+					<?php echo wp_kses($content, $allowed_html); ?>
 				</div>
 				<button class="welcome-screen__enter" type="button" data-welcome-screen-enter><?php esc_html_e('ENTER', 'welcome-screen'); ?></button>
 			</div>

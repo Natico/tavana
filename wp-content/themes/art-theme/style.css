@@ -9,6 +9,14 @@ Text Domain: art-theme
 */
 
 @font-face {
+	font-family: 'Gautami';
+	src: url("assets/fonts/Gautami.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
 	font-family: 'Titling Gothic Skyline';
 	src: url("assets/fonts/titling.woff") format("woff");
 	font-weight: 400;
